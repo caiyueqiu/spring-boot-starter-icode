@@ -13,7 +13,12 @@ public class School implements Cloneable {
 
     @Override
     protected School clone() throws CloneNotSupportedException {
-        return (School) super.clone();
+        // 浅拷贝
+//        return (School) super.clone();
+        // 深拷贝
+        School school = (School) super.clone();
+        school.setStudent(school.getStudent().clone());
+        return school;
     }
 
     public School() {
