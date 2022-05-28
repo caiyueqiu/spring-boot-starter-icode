@@ -1,0 +1,13 @@
+server:
+  port: 8088
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test?useUnicode=true&useSSL=true
+    username: root
+    password: admin
+mybatis:
+  type-aliases-package: com.icode.entity
+mapper:
+  mappers: com.icode.mapper.EmployeeMapper
+  identity: MYSQL
