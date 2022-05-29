@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * TODO
+ * Spring的循环依赖 demo
  *
  * @author caiyq
  * @date 2022/5/28 12:51
@@ -23,8 +23,13 @@ public class LoopDependent {
         // 假装项目初始化实例化所有bean
         Arrays.stream(classes).forEach(LoopDependent::getBean);
         // check
-        System.out.println(getBean(B.class).getA() == getBean(A.class));
-        System.out.println(getBean(A.class).getB() == getBean(B.class));
+        A a = getBean(B.class).getA();
+        A beanA = getBean(A.class);
+        System.out.println(a == beanA);
+
+        B b = getBean(A.class).getB();
+        B beanB = getBean(B.class);
+        System.out.println(b == beanB);
     }
 
     @SneakyThrows
@@ -48,8 +53,7 @@ public class LoopDependent {
             String fieldBeanName = fieldClass.getSimpleName().toLowerCase();
             // 如果需要注入的bean，已经在缓存Map中，那么把缓存Map中的值注入到该field即可
             // 如果缓存没有 继续创建
-            field.set(object, cacheMap.containsKey(fieldBeanName)
-                    ? cacheMap.get(fieldBeanName) : getBean(fieldClass));
+            field.set(object, cacheMap.containsKey(fieldBeanName) ? cacheMap.get(fieldBeanName) : getBean(fieldClass));
         }
         // 属性填充完成，返回
         return (T) object;
