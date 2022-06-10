@@ -58,6 +58,7 @@ class LockCondition {
     }
 
     public void decrement() {
+        lock.lock();
         try {
             while (number == 0) {
                 condition.await();
