@@ -1,4 +1,0 @@
-spring:
-  aop:
-    auto: true #相当于标注了@EnableAspectJAutoProxy
-    proxy-target-class: true #开启cglib代理

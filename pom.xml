@@ -34,7 +34,6 @@
 		<module>icode-spring-annotation</module>
 		<module>icode-nacos</module>
 		<module>icode-data-structure</module>
-		<module>icode-aop</module>
 		<module>icode-interview</module>
 		<module>icode-webservice</module>
 		<module>icode-netty</module>
