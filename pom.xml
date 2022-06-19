@@ -41,6 +41,7 @@
 		<module>icode-kafka</module>
 		<module>icode-rocketmq</module>
 		<module>icode-quartz</module>
+		<module>icode-spring-cloud</module>
 	</modules>
 
 	<properties>
