@@ -27,7 +27,6 @@
 		<module>icode-spring5</module>
 		<module>icode-tk-mapper</module>
 		<module>icode-mongodb</module>
-		<module>icode-spring-cloud-alibaba</module>
 		<module>icode-jvm</module>
 		<module>icode-juc</module>
 		<module>icode-sentinel</module>
