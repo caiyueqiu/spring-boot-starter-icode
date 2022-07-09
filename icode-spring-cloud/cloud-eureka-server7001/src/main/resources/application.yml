@@ -11,4 +11,8 @@ eureka:
     fetch-registry: false
     service-url:
       defaultZone: http://eureka7002.com:7002/eureka/
+  server:
+    # 禁用自我保护机制
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 200
 
